@@ -1,7 +1,10 @@
 ---
 permalink: _redirects
 ---
-
-{% for item in news %}
+{%- for item in news %}
 /  /{{item.country}}/index.html 200 Country={{item.country}}
-{% endfor %}
+{%- endfor %}
+
+{%- for item in news %}
+/{{item.country}}/* /Country={{item.country}}/404.html 404
+{%- endfor %}
