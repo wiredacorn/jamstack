@@ -4,22 +4,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ title }}</title>
   <style>
+    .hidden {
+      display:none;
+    }
     body {
       text-align: center;
     }
-    div.container {
+    .icon {
+      font-size:4em;
+    }
+    :root {
+      --background:#f9f9f9;
+    }
+    div.fullwidth-container {
+      width:100%;
+      background: var(--background);
+    }
+    .container {
       width:400px;
       margin:0 auto;
     }
-    .icon {
-      font-size:4em;
+    .container div {
+      max-width:400px;
+      margin: 0 auto;
+    }
+    .title {
+      background:var(--background);
+    }
+    .weather {
+      width:400px;
+      border-radius:3px;
+      box-shadow:0px 0px 3px rgba(0,0,0,0.2);
+      min-height:306px;
     }
   </style>
 
 </head>
 <body>
   <header>
-    <a href="/">Your Page</a> | <a href="/about">About this page</a>
+    <div class="fullwidth-container">
+      <a href="/">Your Page</a> | <a href="/about">About this page</a>
+    </div>
   </header>
   {{ content | safe }}
 </body>
